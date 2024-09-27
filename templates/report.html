@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly Report</title>
+</head>
+<body>
+    <h1>Monthly Report</h1>
+    <p>Dear User,</p>
+    <p>Here is the monthly report for the previous month:</p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Ebook ID</th>
+                <th>Ebook Name</th>
+                <th>User Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for granted_book in granted_books %}
+            <tr>
+                <td>{{ granted_book.user_id }}</td>
+                <td>{{ granted_book.ebook_id }}</td>
+                <td>{{ granted_book.ebook.name }}</td>
+                <td>{{ granted_book.user.email }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Best regards,</p>
+    <p>Your Team</p>
+</body>
+</html>
